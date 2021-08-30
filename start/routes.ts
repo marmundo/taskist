@@ -31,3 +31,4 @@ Route.delete('/tasks/:id','TaskController.delete')
 
 Route.get('/registrar','AuthController.showRegistrar')
 Route.post('/registrar','AuthController.registrar')
+Route.get('/logout','AuthController.logout')
