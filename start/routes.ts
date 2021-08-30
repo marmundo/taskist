@@ -29,4 +29,5 @@ Route.post('/tasks','TaskController.armazenar')
 Route.patch('/tasks/:id','TaskController.alterar')
 Route.delete('/tasks/:id','TaskController.delete')
 
-Route.get('/registrar','AuthController.registrar')
+Route.get('/registrar','AuthController.showRegistrar')
+Route.post('/registrar','AuthController.registrar')
