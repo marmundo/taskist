@@ -25,3 +25,4 @@ Route.get('/', async ({ view }) => {
 })
 
 Route.get('/tasks','TaskController.index')
+Route.post('/tasks','TaskController.armazenar')
