@@ -1,0 +1,66 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="/" id="name-site">
+      <i class="fas fa-tasks"></i> <span><p>
+        Taskist</p></span>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class=" button" href="/register">
+                <span class="icon">
+                  <i class="far fa-hand-point-right"></i>
+                </span>
+                <span>
+                  Registro
+                </span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button " href="/login">
+                <span class="icon">
+                  <i class="fas fa-sign-in-alt"></i>
+                </span>
+                <span>Log In</span>
+              </a>
+            </p>
+          </div>
+        </div>
+
+      {{--  <div class="navbar-end">
+        <div class="navbar-item">
+          {{--  <div class="field is-grouped">  --}}
+            <a href="/register" class="bd-tw-button button is-outlined">Registro</a>
+            <a href="/login" class="bd-tw-button button">Login</a>
+          {{--  </div>  --}}
+        </div>
+      </div>
+    </div>  --}}
+</nav>
+<style>
+  #name-site{
+    font-size: 30pt;
+    color: aliceblue
+  }
+  .navbar-item{
+    font-size: 1.5em;
+    color:darkblue;
+  }
+  .fa-tasks{
+    margin-right: 15%
+  }
+  .navbar{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,9,121,0.9836309523809523) 17%, rgba(0,212,255,1) 70%);
+  }
+</style>
