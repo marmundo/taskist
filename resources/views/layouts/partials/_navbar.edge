@@ -5,14 +5,14 @@
         Taskist</p></span>
     </a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <a role="button" class="navbar-burger" style="color:white" aria-label="menu" aria-expanded="false" data-target="navMenu">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
     </a>
   </div>
 
-    <div class="navbar-menu">
+    <div class="navbar-menu" id="navMenu">
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="field is-grouped">
@@ -51,6 +51,8 @@
   }
   .navbar{
     background: rgb(2,0,36);
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,9,121,0.9836309523809523) 17%, rgba(0,212,255,1) 70%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(11,9,121,0.9836309523809523) 17%, rgba(0,212,255,1) 70%);
   }
-</style>
+  </style>
+{{{ `<script>document.addEventListener("DOMContentLoaded", function () {var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll(".navbar-burger"), 0);if ($navbarBurgers.length > 0) {$navbarBurgers.forEach(function ($el) {$el.addEventListener("click", function () {var target = $el.dataset.target;var $target = document.getElementById(target);$el.classList.toggle("is-active");$target.classList.toggle("is-active");});});}})
+  </script>` }}}

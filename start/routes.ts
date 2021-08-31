@@ -20,17 +20,13 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
-})
+Route.get('/', 'TasksController.index')
+Route.post('/tasks', 'TasksController.armazenar')
+Route.patch('/tasks/:id', 'TasksController.alterar')
+Route.delete('/tasks/:id', 'TasksController.delete')
 
-Route.get('/tasks','TaskController.index')
-Route.post('/tasks','TaskController.armazenar')
-Route.patch('/tasks/:id','TaskController.alterar')
-Route.delete('/tasks/:id','TaskController.delete')
-
-Route.get('/registrar','AuthController.showRegistrar')
-Route.post('/registrar','AuthController.registrar')
-Route.get('/logout','AuthController.logout')
-Route.get('/login','AuthController.showLogin')
-Route.post('/login','AuthController.login')
+Route.get('/registrar', 'AuthController.showRegistrar')
+Route.post('/registrar', 'AuthController.registrar')
+Route.get('/logout', 'AuthController.logout')
+Route.get('/login', 'AuthController.showLogin')
+Route.post('/login', 'AuthController.login')
