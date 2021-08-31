@@ -4,7 +4,8 @@ import Task from 'App/Models/Task'
 
 export default class TasksController {
   public async index ({ view }: HttpContextContract) {
-    return view.render('tasks/index')
+    const tasks=await Task.all()
+    return view.render('tasks/index',{tasks:tasks})
   }
   public async armazenar ({ response,request }: HttpContextContract) {
     const validationSchema = schema.create({
