@@ -8,6 +8,13 @@ export default class TasksController {
     return view.render('tasks/index',{tasks:tasks})
   }
 
+  public async delete ({params,response,session}:HttpContextContract){
+    var task=await Task.findOrFail(params.id)
+    task.delete()
+    session.flash('notification','Tarefa Deletada!')
+    response.redirect('back')
+  }
+
   public async alterar ({request,params,response,session}:HttpContextContract){
     var task=await Task.findOrFail(params.id)
     task.isCompleted = !!request.input('completed');
@@ -15,7 +22,7 @@ export default class TasksController {
     session.flash('notification','Tarefa Atualizada!')
     response.redirect('back')
   }
-  
+
   public async armazenar ({ response,request }: HttpContextContract) {
     const validationSchema = schema.create({
       title: schema.string({ trim: true }, [
