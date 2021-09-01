@@ -35,7 +35,7 @@
             @each(task in tasks)
               <tr>
                 <td>
-                  <form action="{{ `/tasks/${task.id}?_method=PATCH` }}" method="post">
+                  <form action="{{ `/tasks/${task.id}?_method=PATCH` }}"method="post">
                     {{ csrfField() }}
 
                     <label for="completed" class="checkbox">
@@ -45,7 +45,8 @@
                 </td>
                 <td>
                 <div class="{{ task.isCompleted ? 'completed' : '' }}">
-                    {{ task.title }}
+                    {{ task.title }}  
+                      {{ csrfField() }}
                   </div>
                 </td>
                 <td>

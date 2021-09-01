@@ -7,6 +7,15 @@ export default class TasksController {
     const tasks=await Task.all()
     return view.render('tasks/index',{tasks:tasks})
   }
+
+  public async alterar ({request,params,response,session}:HttpContextContract){
+    var task=await Task.findOrFail(params.id)
+    task.isCompleted = !!request.input('completed');
+    (await task).save()
+    session.flash('notification','Tarefa Atualizada!')
+    response.redirect('back')
+  }
+  
   public async armazenar ({ response,request }: HttpContextContract) {
     const validationSchema = schema.create({
       title: schema.string({ trim: true }, [
