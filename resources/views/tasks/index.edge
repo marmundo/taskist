@@ -46,7 +46,6 @@
                 <td>
                 <div class="{{ task.isCompleted ? 'completed' : '' }}">
                     {{ task.title }}  
-                      {{ csrfField() }}
                   </div>
                 </td>
                 <td>
@@ -67,4 +66,9 @@
       </div>
     </div>
   </div>
+  <style>
+    .completed{
+      text-decoration: line-through;
+    }
+  </style>
 @endsection
