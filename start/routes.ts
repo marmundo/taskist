@@ -27,6 +27,7 @@ Route.delete('/tasks/:id', 'TasksController.delete')
 
 Route.get('/registrar', 'AuthController.showRegistrar')
 Route.post('/registrar', 'AuthController.registrar')
-Route.get('/logout', 'AuthController.logout')
+Route.post('/logout', 'AuthController.logout')
 Route.get('/login', 'AuthController.showLogin')
 Route.post('/login', 'AuthController.login')
+

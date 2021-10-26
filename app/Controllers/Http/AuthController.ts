@@ -6,6 +6,23 @@ export default class AuthController {
   public async showRegistrar ({view}){
     return view.render('auth/register')
   }
+  public async login ({ request, auth, session, response }: HttpContextContract) {
+    const { email, password } = request.all()
+
+    try {
+      await auth.attempt(email, password)
+      console.log(auth)
+      return response.redirect('/')
+    } catch (error) {
+      session.flash('notification', 'Verifique seu email e senha')
+
+      return response.redirect('back')
+    }
+  }
+
+  public showLogin ({ view }: HttpContextContract) {
+    return view.render('auth/login')
+  }
 
   public async logout ({ auth, response }: HttpContextContract) {
     await auth.logout()
@@ -30,7 +47,7 @@ export default class AuthController {
       schema: validationSchema,
       messages: {
         'confirmed': 'As senhas devem ser iguais',
-      },)
+      })
     const user=await User.create(validatedData)
 
     await auth.login(user)
