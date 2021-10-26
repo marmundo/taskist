@@ -7,6 +7,12 @@ export default class AuthController {
     return view.render('auth/register')
   }
 
+  public async logout ({ auth, response }: HttpContextContract) {
+    await auth.logout()
+
+    return response.redirect('/')
+  }
+
   public async registrar ({ response,auth,request }: HttpContextContract){
     const validationSchema = schema.create({
       name: schema.string({trim: true }),
@@ -24,7 +30,7 @@ export default class AuthController {
       schema: validationSchema,
       messages: {
         'confirmed': 'As senhas devem ser iguais',
-    })
+      },)
     const user=await User.create(validatedData)
 
     await auth.login(user)
