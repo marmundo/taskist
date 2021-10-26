@@ -1,10 +1,7 @@
-import { DateTime } from 'luxon'
 import Hash from '@ioc:Adonis/Core/Hash'
-import {
-  column,
-  beforeSave,
-  BaseModel,
-} from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, beforeSave, column, hasMany, HasMany } from '@ioc:Adonis/Lucid/Orm'
+import { DateTime } from 'luxon'
+import Task from './Task'
 
 export default class User extends BaseModel {
   @column({ isPrimary: true })
@@ -16,7 +13,7 @@ export default class User extends BaseModel {
   @column()
   public email: string
 
-  @column({ serializeAs: null })
+  @column()
   public password: string
 
   @column()
@@ -34,4 +31,7 @@ export default class User extends BaseModel {
       user.password = await Hash.make(user.password)
     }
   }
+
+  @hasMany(() => Task)
+  public tasks: HasMany<typeof Task>
 }
