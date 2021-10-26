@@ -8,3 +8,6 @@ Learning Purpose.
 
 ## Start the development server
 node ace serve --watch or node run dev
+
+## Create a Controller
+node ace make:controller ControllerName
