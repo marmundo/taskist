@@ -47,7 +47,9 @@ export default class AuthController {
       schema: validationSchema,
       messages: {
         'confirmed': 'As senhas devem ser iguais',
-      })
+      },
+    })
+
     const user=await User.create(validatedData)
 
     await auth.login(user)

@@ -1,7 +1,4 @@
 {
-  "engines": {
-    "node": "12.18.3"
-  },
   "name": "taskist",
   "version": "1.0.0",
   "private": true,
